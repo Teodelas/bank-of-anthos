@@ -17,6 +17,7 @@ resource "google_storage_bucket" "build_cache" {
   name                        = "build-cache-${var.team}-${var.project_id}"
   uniform_bucket_level_access = true
   location                    = var.region
+  public_access_prevention = "enforced"
 }
 
 # GCS bucket used by Cloud Build to stage sources for Cloud Deploy
